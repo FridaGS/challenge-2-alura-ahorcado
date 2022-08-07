@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del ahorcado</title>
+    
+</head>
+<body>
+    <header>
+        <img src="./img/logo.png">
+    </header>
+    <main>
+        <!-- Aquí se renderiza la página principal-->
+        <div class="main-buttons-container">
+            <div class="buttons-container">
+                <button class="start-game" onclick="renderGame()">Iniciar juego</button>
+                <button class="new-word" onclick="renderNewWord()">Agregar nueva palabra</button>
+            </div>
+        </div>
+        
+        <!--Aquí es lo que renderiza Nueva palabra
+        <div class="new-word-container">
+            <div class="text-container">
+                <input type="text" class="text-input" id="text-input" placeholder="Ingrese una palabra" minlength="0" maxlength="8"></input>
+            </div>
+            <div class="conditions-container">
+                <img src="./img/exclamation.png" alt="exclamation circle">
+                <p>Máx. de 8 letras</p>
+            </div>
+            <div class="buttons-container">
+                <button class="blue-button saveButton" >Guardar y empezar</button>
+                <button class="white-button cancelButton" >Cancelar</button>
+            </div>
+        </div>
+        -->
+        <!--Aquí es lo que renderiza el juego
+        <div class="main-game-container">
+            <div class="game-container">
+                <div class="draw-container">
+                    <canvas class="draw-canvas"></canvas>
+                </div>
+                <div class="word-container">
+                    <div class="correct-word">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="incorrect-letters">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-container">
+                <button class="newGameButton blue-button" >Nuevo juego</button>
+                <button class="giveUpButton white-button" >Desistir</button>
+            </div>
+        </div>
+        -->
+    </main>
+    
+    <script src="index.js"></script>
+    
+</body>
+</html>
+<!-- ******************************** 
+**Requisitos:**
+- Debe funcionar solo con letras mayúsculas;
+- No deben ser utilizadas letras con acentos ni caracteres especiales;
+- Al completar o dibujo de la horca, debe ser mostrado un mensaje "Fin del juego" en la pantalla;
+- Si se completa la palabra correcta antes de que se acaben los intentos, debe ser mostrado un mensaje de "Ganaste, Felicidades!" en la pantalla.
+- La página debe tener los guiones indicando cada letra da palabra, separados por un espacio;
+- Para comenzar el juego la página debe tener un botón de "Iniciar Juego";
+- No debe ser posible escribir números dentro del juego.
+- Las letras equivocadas deben aparecer en la pantalla, pero no pueden aparecer de forma repetida;
+- Las letras correctas deben aparecer en la pantalla encima de los guiones, en la posición correcta em relación a la palabra.
+
+**Extras:**
+- La página debe tener un campo para inserción de texto con la finalidad de adicionar nuevas palabras al juego, e un botón "Agregar palabra". 
+
+-----
+-->
