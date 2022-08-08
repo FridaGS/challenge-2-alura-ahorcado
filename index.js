@@ -7,7 +7,7 @@
 */
 'use strict';
 /*Palabras*/
-let words = ["DEFENDER", "ACEITUNA", "HOLA"];
+let words = ["DEFENDER", "ACEITUNA", "HOLA", "COLUMPIO", "ABSTRAER", "CACHORRO", "BIOGRAFO", "ACEITUNA", "PUBLICAR", "DECORADO", "BLINDAJE", "ACORDEON", "PUBERTAD", "ADOPCION", "ACREEDOR", "EDIFICIO", "ARTRITIS", "FASTIDIO", "ASIATICA", "AUMENTAR", "CALCINAR", "PRINCESA", "CLAUSULA", "COLUMPIO", "PROYECTO", "CONTINUO", "GASTANDO", "CUADERNO", "PERJURIO", "FANATICO", "PIMIENTA", "HAMBURGO", "PLATILLO", "LADRILLO"];
 let wordLetters; 
 let letters = [];
 let lettersLi = [];
@@ -179,11 +179,11 @@ function drawMan(){
     let screen = document.querySelector("canvas");
     let pen = screen.getContext("2d");
     
-    pen.fillStyle = "lightgray";
+    pen.fillStyle = "white";
     pen.fillRect(0,0,600,400);
 
-    pen.fillStyle = "red";
-    pen.fillRect(100,100,5,300);
+    pen.fillStyle = "#FFAFCC";
+    pen.fillRect(100,100,5,290);
     pen.fillRect(100,100,200,5);
     pen.fillRect(20,390,400,5);
     pen.fillRect(300,100,5,40);
@@ -255,7 +255,7 @@ function selectWord(){
 
 function addNewWord(){
     let inputContainer = document.querySelector('input');
-    words.push(inputContainer.value);
+    words.push(inputContainer.value.toUpperCase());
     renderMain();
 }
 
@@ -322,22 +322,22 @@ function wrongLetter(letter){
 
             switch (i){
                 case 0:
-                    pen.fillStyle = "blue";
+                    pen.fillStyle = "#BDE0FE";
                     pen.beginPath();
                     pen.arc(305,170,30,0,2*3.14);
                     pen.fill();
-                    pen.fillStyle = "lightgray";
+                    pen.fillStyle = "white";
                     pen.beginPath();
                     pen.arc(305,170,25,0,2*3.14);
                     pen.fill();
                 break;
                 case 1:
-                    pen.fillStyle = "blue";
+                    pen.fillStyle = "#BDE0FE";
                     pen.fillRect(300,200,5,120);
                 break;
                 case 2:
                     pen.lineWidth = 5;
-                    pen.strokeStyle = "blue";
+                    pen.strokeStyle = "#BDE0FE";
                     pen.beginPath();
                     pen.moveTo(303, 220);
                     pen.lineTo(340, 250);
@@ -345,7 +345,7 @@ function wrongLetter(letter){
                 break;
                 case 3:
                     pen.lineWidth = 5;
-                    pen.strokeStyle = "blue";
+                    pen.strokeStyle = "#BDE0FE";
                     pen.beginPath();
                     pen.moveTo(303, 220);
                     pen.lineTo(267, 250);
@@ -353,7 +353,7 @@ function wrongLetter(letter){
                 break;
                 case 4:
                     pen.lineWidth = 5;
-                    pen.strokeStyle = "blue";
+                    pen.strokeStyle = "#BDE0FE";
                     pen.beginPath();
                     pen.moveTo(303, 318);
                     pen.lineTo(277, 348);
@@ -361,7 +361,7 @@ function wrongLetter(letter){
                 break;
                 case 5:
                     pen.lineWidth = 5;
-                    pen.strokeStyle = "blue";
+                    pen.strokeStyle = "#BDE0FE";
                     pen.beginPath();
                     pen.moveTo(303, 318);
                     pen.lineTo(330, 348);

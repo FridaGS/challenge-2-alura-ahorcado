@@ -8,8 +8,8 @@
 body{
     position: relative;
     min-height: 100vh;
-    background-color: #F3F5FC;
-    font-family: Inter, sans-serif;
+    background-color: #BDE0FE;
+    font-family: 'Montserrat', sans-serif;
     padding-bottom: 60px;
 }
 header{
@@ -19,54 +19,119 @@ header img{
     margin: 10px;
 }
 main{
-    margin: 5%;
+    margin-left: 20%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    min-height: 30vh;
+    background-color: #CDB4DB;
+    border-radius: 15px;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 .main-buttons-container{
-    margin: 20px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 24px;
-    border: 1px solid #0A3871;
-}
-.main-buttons-container button{
-    align-self: center;
-    border: 1px solid #0A3871;
-    border-radius: 25px;
+    width: 100%;
 }
 .buttons-container{
-    margin: 20px 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 .buttons-container button{
-    align-self: center;
-    width: 100%;
-    border: 1px solid #0A3871;
-    border-radius: 25px;
-    height: 65px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+    border: none;
+    min-height: 70px;
+    width: 80%;
+    max-width: 500px;
+    background-color: #FFC8DD;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 .buttons-container button:hover{
+    border: 2px solid white;
     transform: scale(1.05);
     cursor: pointer;
 }
-.blue-button{
-    background-color: #0A3871;
-    color: white;
+
+/****** NEW WORD SCREEN ******/
+.new-word-container{
+    margin-bottom: 15px;
 }
-.white-button{
-    color: #0A3871;
+.text-container{
+    margin: 30px;
+}
+.text-container input{
+    border: none;
     background-color: transparent;
-}
-.start-game{
+    color: black;
     width: 100%;
-    height: 100px;
+    outline: none;
 }
-.new-word{
-    width: 80%;
-    height: 65px;
+.conditions-container{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.conditions-container img{
+    margin-right: 10px;
+}
+.conditions-container p{
+    color: rgb(68, 68, 68);
+}
+/****** GAME SCREEN ******/
+.draw-canvas{
+    width: 96%;
+    border-radius: 15px;
+    margin: 2%;
+}
+.word-container ul{
+    list-style-type: none;
+    margin: 30px 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+}
+.word-container li{
+    display: inline;
+    margin: 0 5px;
+}
+.word-container input{
+    width: 15px;
+    border:none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    color: black;
+    outline: none;
+    
+}
+/****** LOSE SCREEN ******/
+.draw-container{
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.draw-container p{
+    background-color: #FFAFCC;
+    border-radius: 15px;
+    margin: 15px;
+    min-height: 8vh;
+    padding: 0 15px;
+    padding-top: 30px;
+    
+}
+/*
+CDB4DB morado
+FFC8DD rosa claro
+FFAFCC rosa fuerte
+BDE0FE aqua
+A2D2FF azul
+*/
