@@ -12,7 +12,7 @@ let wordLetters;
 let letters = [];
 let lettersLi = [];
 let lettersLiContent = [];
-let incorrectLetters = [];
+let incorrectLettersArray = [];
 let incorrectLetterTry = [];
 /*Main para insertar los renders */
 let mainContainer = document.querySelector('main');
@@ -70,6 +70,7 @@ function renderNewWord(){
 
 function renderGame(){
     clearMain();
+    clearArray(incorrectLettersArray);
     const container = document.createElement("div");
     const buttonsContainer = document.createElement("div");
     const gameContainer = document.createElement("div");
@@ -233,6 +234,7 @@ function drawMan(){
 }
 
 function selectWord(){
+    
     let index = Math.floor(Math.random() * words.length+1)-1;
     wordLetters = words[index].split('');
     let wordUl = document.querySelector(".correct-word");
@@ -292,17 +294,17 @@ function wrongLetter(letter){
     let pen = screen.getContext("2d");
 
     
-    let incorrectWordLetters = incorrectLetters.join('');
+    let incorrectWordLetters = incorrectLettersArray.join('');
     let incorrectLettersUl = document.querySelector(".incorrect-letters");
     if(incorrectWordLetters.includes(letter)){
         console.log("ya estaba aquí");
     }
     else{
-        incorrectLetters.push(letter);
+        incorrectLettersArray.push(letter);
         incorrectLettersUl.innerHTML = '';
-        for(let i = 0; i < incorrectLetters.length; i++){
+        for(let i = 0; i < incorrectLettersArray.length; i++){
             incorrectLetterTry[i] = document.createElement("li");
-            incorrectLetterTry[i].innerHTML = incorrectLetters[i];
+            incorrectLetterTry[i].innerHTML = incorrectLettersArray[i];
             incorrectLettersUl.appendChild(incorrectLetterTry[i]);
 
             switch (i){
@@ -358,7 +360,7 @@ function wrongLetter(letter){
             }
         }
     }
-    console.log(incorrectLetters)
+    console.log(incorrectLettersArray)
 }
 
 function winAlert(){
@@ -377,4 +379,11 @@ function loseAlert(){
     loserP.innerHTML = "JUEGO TERMINADO, PERDISTE. ):";
 
     container.append(loserP);
+}
+
+function clearArray(array){
+    let aux;
+    for(let i = 0; i < array.length; i++){
+        aux = array.shift();
+    }   
 }
