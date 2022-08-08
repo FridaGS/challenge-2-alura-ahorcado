@@ -261,15 +261,31 @@ function addNewWord(){
 
 function matchLetter(i){
     letters[i].value = letters[i].value.toUpperCase();
+    let auxLetter = [];
     let container = document.querySelector(".conditions-container");
     container.style.border = "none"
     if(verifyText(letters[i].value)){
-        if(wordLetters[i] == letters[i].value){
-            lettersLi[i].innerHTML = wordLetters[i];
-            lettersLiContent[i] = wordLetters[i];
+
+        if(wordLetters.join('').includes(letters[i].value)){
+            for(let j = 0; j < wordLetters.length; j++){
+                if(!auxLetter.join('').includes(wordLetters.indexOf(letters[i].value, j))){
+                    auxLetter.push(wordLetters.indexOf(letters[i].value, j));
+                }
+            }
+            for(let j = 0; j < auxLetter.length; j++){
+                if(auxLetter[j] != -1){
+                lettersLi[auxLetter[j]].innerHTML = letters[i].value;
+                lettersLiContent[auxLetter[j]] = letters[i].value;
+                }
+            }
+            if(wordLetters[i] == letters[i].value){
+                lettersLiContent[i] = wordLetters[i];
+            }
+            else{
+                letters[i].value='';
+            }
         }
         else{
-            console.log('nope');
             wrongLetter(letters[i].value);
         }
     }
@@ -296,10 +312,7 @@ function wrongLetter(letter){
     
     let incorrectWordLetters = incorrectLettersArray.join('');
     let incorrectLettersUl = document.querySelector(".incorrect-letters");
-    if(incorrectWordLetters.includes(letter)){
-        console.log("ya estaba aquí");
-    }
-    else{
+    if(!incorrectWordLetters.includes(letter)){
         incorrectLettersArray.push(letter);
         incorrectLettersUl.innerHTML = '';
         for(let i = 0; i < incorrectLettersArray.length; i++){
@@ -360,7 +373,6 @@ function wrongLetter(letter){
             }
         }
     }
-    console.log(incorrectLettersArray)
 }
 
 function winAlert(){
