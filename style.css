@@ -42,9 +42,6 @@ header li a{
 header li a:hover{
     color: white;
 }
-header li a:hover img{
-    color: white;
-}
 .logo-alura{
     float: left;
 }
