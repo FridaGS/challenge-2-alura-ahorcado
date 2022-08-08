@@ -1,10 +1,3 @@
-/*
-**Requisitos:**
-- La página debe tener los guiones indicando cada letra da palabra, separados por un espacio;
-- Las letras correctas deben aparecer en la pantalla encima de los guiones, en la posición correcta em relación a la palabra.
-
------
-*/
 'use strict';
 /*Palabras*/
 let words = ["DEFENDER", "ACEITUNA", "HOLA", "COLUMPIO", "ABSTRAER", "CACHORRO", "BIOGRAFO", "ACEITUNA", "PUBLICAR", "DECORADO", "BLINDAJE", "ACORDEON", "PUBERTAD", "ADOPCION", "ACREEDOR", "EDIFICIO", "ARTRITIS", "FASTIDIO", "ASIATICA", "AUMENTAR", "CALCINAR", "PRINCESA", "CLAUSULA", "COLUMPIO", "PROYECTO", "CONTINUO", "GASTANDO", "CUADERNO", "PERJURIO", "FANATICO", "PIMIENTA", "HAMBURGO", "PLATILLO", "LADRILLO"];
@@ -107,8 +100,8 @@ function renderGame(){
     conditionsImg.setAttribute('src', "./img/exclamation.png");
     conditionsImg.setAttribute('alt', "exclamation circle");
 
-    draw.setAttribute("height", "400");//////////////////////////////////////
-    draw.setAttribute("width", "600");///////////////////////////////////////
+    draw.setAttribute("height", "400");
+    draw.setAttribute("width", "600");
 
     newGameButton.innerHTML = "Nuevo juego";
     giveUpButton.innerHTML = "Desistir";
@@ -187,50 +180,6 @@ function drawMan(){
     pen.fillRect(100,100,200,5);
     pen.fillRect(20,390,400,5);
     pen.fillRect(300,100,5,40);
-
-
-/*
-    pen.fillStyle = "blue";
-    pen.beginPath();
-    pen.arc(305,170,30,0,2*3.14);
-    pen.fill();
-    pen.fillStyle = "lightgray";
-    pen.beginPath();
-    pen.arc(305,170,25,0,2*3.14);
-    pen.fill();
-
-    pen.fillStyle = "blue";
-    pen.fillRect(300,200,5,120);
-
-    pen.lineWidth = 5;
-    pen.strokeStyle = "blue";
-    pen.beginPath();
-    pen.moveTo(303, 220);
-    pen.lineTo(340, 250);
-    pen.stroke();
-
-    pen.lineWidth = 5;
-    pen.strokeStyle = "blue";
-    pen.beginPath();
-    pen.moveTo(303, 220);
-    pen.lineTo(267, 250);
-    pen.stroke();
-
-    pen.lineWidth = 5;
-    pen.strokeStyle = "blue";
-    pen.beginPath();
-    pen.moveTo(303, 318);
-    pen.lineTo(330, 348);
-    pen.stroke();
-
-    pen.lineWidth = 5;
-    pen.strokeStyle = "blue";
-    pen.beginPath();
-    pen.moveTo(303, 318);
-    pen.lineTo(277, 348);
-    pen.stroke();
-*/
-    
 }
 
 function selectWord(){
@@ -238,7 +187,7 @@ function selectWord(){
     let index = Math.floor(Math.random() * words.length+1)-1;
     wordLetters = words[index].split('');
     let wordUl = document.querySelector(".correct-word");
-    console.log(wordLetters);
+    //console.log(wordLetters);
     for(let i = 0; i < wordLetters.length; i++){
         lettersLi[i] = document.createElement("li");
         letters[i] = document.createElement("input");
@@ -378,6 +327,7 @@ function wrongLetter(letter){
 function winAlert(){
     let container = document.querySelector(".draw-container");
     const winnerP = document.createElement("p");
+    container.style.backgroundColor = "#A2D2FF";
     container.innerHTML = '';
     winnerP.innerHTML = "FELICIDADES, GANASTE (:";
 
@@ -386,11 +336,13 @@ function winAlert(){
 
 function loseAlert(){
     let container = document.querySelector(".draw-container");
+    let guButton = document.querySelector(".giveUpButton");
     const loserP = document.createElement("p");
     container.innerHTML = '';
+    container.style.backgroundColor = "#FFAFCC";
     loserP.innerHTML = "JUEGO TERMINADO, PERDISTE. ):";
-
     container.append(loserP);
+    guButton.removeEventListener('click', guButton.style.opacity = .7, true);
 }
 
 function clearArray(array){
